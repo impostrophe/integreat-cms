@@ -61,7 +61,7 @@
                 {% endif %}
             </div>
             <div id="region-list"
-                 class="absolute hidden shadow rounded-b top-full right-0 bg-gray-200">
+                 class="absolute hidden max-h-[calc(100vh-4rem)] overflow-y-auto shadow rounded-b top-full right-0 bg-gray-200">
                 {% for region in request.quick_access_regions %}
                     <a href="{% url 'dashboard' region_slug=region.slug %}"
                        class="block px-4 py-3 text-gray-800 hover:bg-gray-300">
