@@ -76,12 +76,12 @@
                         {% endif %}
                         <div id="link-container" class="flex items-center">
                             <label class="inline-block">{% translate "Link to the imprint" %}:</label>
-                            <a href="{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/{{ IMPRINT_SLUG }}"
+                            <a href="{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/imprint"
                                target="_blank"
                                rel="noopener noreferrer"
-                               class="text-blue-500 hover:underline">{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/{{ IMPRINT_SLUG }}</a>
+                               class="text-blue-500 hover:underline">{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/imprint</a>
                             <a href="#"
-                               data-copy-to-clipboard="{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/{{ IMPRINT_SLUG }}"
+                               data-copy-to-clipboard="{{ WEBAPP_URL }}/{{ request.region.slug }}/{{ language.slug }}/imprint"
                                title="{% translate "Copy to clipboard" %}"
                                class="px-2 text-gray-800 hover:text-blue-500">
                                 <i icon-name="copy"></i>
