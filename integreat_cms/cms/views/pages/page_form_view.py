@@ -636,7 +636,7 @@ class PageFormView(
             )
 
         if (
-            page_translation_form.instance.status == status.AUTO_SAVE
+            request.POST.get("status") == status.AUTO_SAVE
             and not page_form.has_changed()
             and not page_translation_form.has_changed()
         ):
