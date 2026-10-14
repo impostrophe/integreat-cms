@@ -36,7 +36,6 @@ class UserPasswordForm(CustomModelForm):
 
     new_password = forms.CharField(
         widget=forms.PasswordInput,
-        validators=[validate_password],
         label=_("My new password"),
         help_text=password_validators_help_texts,
     )
@@ -91,6 +90,12 @@ class UserPasswordForm(CustomModelForm):
 
         if new_password != new_password_confirm:
             self.add_error("new_password_confirm", _("The new passwords do not match."))
+
+        if new_password:
+            try:
+                validate_password(new_password, self.instance)
+            except forms.ValidationError as error:
+                self.add_error("new_password", error)
 
         logger.debug(
             "UserPasswordForm validated [2] with cleaned data %r",
